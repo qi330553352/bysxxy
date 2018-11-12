@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.sxxy.dao.SystemResourceDao">
+
+    <resultMap type="SystemResource" id="SystemResourceResult">
+        <result property="id" column="id"/>
+        <result property="resourceName" column="resource_name"/>
+        <result property="url" column="url"/>
+        <result property="pid" column="pid"/>
+        <result property="pids" column="pids"/>
+
+        <result property="permission" column="permission"/>
+        <result property="resourceType" column="resource_type"/>
+        <result property="icon" column="icon"/>
+        <result property="idx" column="idx"/>
+        <result property="enabled" column="enabled"/>
+
+        <result property="httpMethod" column="httpMethod"/>
+    </resultMap>
+
+    <select id="findTopList" resultType="java.util.Map">
+        SELECT a.`id`,a.`resource_name` AS resourceName,a.`url`,a.`icon`
+        FROM system_resource a WHERE a.`pid` = 0 AND a.`resource_type` = 1 AND a.`enabled` IS TRUE
+        ORDER BY a.`idx` ASC
+    </select>
+
+    <select id="findListByPid" resultType="java.util.Map" parameterType="java.lang.Long">
+        SELECT a.`id`,a.`resource_name` AS resourceName,a.`url`,a.`icon`
+        FROM system_resource a WHERE a.`resource_type` = 1 AND a.`enabled` IS TRUE
+        AND a.`pid` = #{pid}
+        ORDER BY a.`idx` ASC
+    </select>
+</mapper>

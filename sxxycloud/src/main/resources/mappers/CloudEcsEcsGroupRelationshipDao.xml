@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.sxxy.dao.CloudEcsEcsGroupRelationshipDao">
+
+    <resultMap type="CloudEcsEcsGroupRelationship" id="CloudEcsEcsGroupRelationshipResult">
+        <result property="id" column="id"/>
+        <result property="cloudecsId" column="cloudecs_id"/>
+        <result property="ecsGroupId" column="ecsgroup_id"/>
+    </resultMap>
+
+    <insert id="batchInserts" parameterType="java.util.List">
+        insert into cloudecs_ecsgroup_relationship (id,cloudecs_id,ecsgroup_id)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.id},#{item.cloudecsId},#{item.ecsGroupId})
+        </foreach>
+    </insert>
+    <select id="findEcsIdByEcsGroupId" resultType="java.lang.String" parameterType="java.lang.Long">
+        SELECT a.`cloudecs_id` FROM `cloudecs_ecsgroup_relationship` a WHERE a.`ecsgroup_id` = #{groupId}
+    </select>
+    <select id="findlistDataChild" resultType="java.util.Map">
+        SELECT a.`id`,a.`name`,a.`addr`,CASE a.`status` WHEN 'active' THEN '运行中' WHEN 'shutoff' THEN '关机' END AS `status`,
+                   DATE_FORMAT(a.`update_time`,'%Y-%m-%d %H:%i') AS updateTime,
+                   DATE_FORMAT(a.`last_update_time`,'%Y-%m-%d %H:%i') AS lastUpdateTime
+        FROM cloud_ecs_info a LEFT JOIN cloudecs_ecsgroup_relationship b ON a.`id`=b.`cloudecs_id`
+        WHERE b.ecsgroup_id = #{id}
+        ORDER BY a.`name` ASC
+    </select>
+</mapper>

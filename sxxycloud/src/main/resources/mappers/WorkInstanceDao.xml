@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.sxxy.dao.WorkInstanceDao">
+
+    <resultMap type="WorkInstance" id="WorkInstanceResult">
+        <result property="id" column="id"/>
+        <result property="introducer" column="introducer"/>
+        <result property="createTime" column="create_time"/>
+        <result property="workType" column="work_type"/>
+        <result property="describes" column="describes"/>
+    </resultMap>
+
+    <select id="findDatas" resultType="java.util.Map">
+        SELECT a.`id`,a.`introducer`,DATE_FORMAT(a.`create_time`,'%Y-%m-%d') AS createTime,a.`work_type` AS workType,a.`describes`
+        FROM work_instance a
+        ORDER BY a.`id` DESC
+        <if test="page != null and rows != null"> LIMIT #{page},#{rows}</if>
+    </select>
+    <select id="findTotal" resultType="java.lang.Integer">
+        SELECT COUNT(0)
+        FROM work_instance a
+    </select>
+    <insert id="save" parameterType="com.chinasofti.sxxy.entity.WorkInstance">
+        insert into work_instance (introducer,create_time,work_type,describes) values
+        (#{introducer},#{createTime},#{workType},#{describes})
+    </insert>
+</mapper>
