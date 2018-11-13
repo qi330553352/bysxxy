@@ -56,7 +56,7 @@
         <div class="container mb30 ">
             <div class="b-page-breadcrumb-wrap">
                 <div aria-label="Breadcrumb" role="navigation" class="el-breadcrumb">
-                    <span class="el-breadcrumb__item"><span role="link" class="el-breadcrumb__inner">首页</span><i class="el-breadcrumb__separator el-icon-arrow-right"></i></span>
+                    <span class="el-breadcrumb__item"><a href="../index/main" class="el-breadcrumb__inner">首页</a><i class="el-breadcrumb__separator el-icon-arrow-right"></i></span>
                     <span class="el-breadcrumb__item" aria-current="page"><span role="link" class="el-breadcrumb__inner">活动管理</span><i class="el-breadcrumb__separator el-icon-arrow-right"></i></span>
                 </div>
             </div>

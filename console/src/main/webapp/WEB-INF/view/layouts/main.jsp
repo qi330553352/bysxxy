@@ -39,7 +39,7 @@
                     <div class="line fl"></div>
                     <div class="user_group fl">
                         <div class="user_img fl">
-                            <img src="/backend/static/img/user.5daf539.png" alt="用户头像" />
+                            <img src="/backend/static/img/user.5daf539.jpeg" alt="用户头像" />
                         </div>
                         <div class="user_btn fl pos_rl">
                             <span>admin</span>
@@ -74,23 +74,24 @@
                         </div>
                     </div>
                 </a>
-                <div class="item col_purple">
-                    <h1>填答卷管理</h1>
-                    <div class="mid">
-                        <span class="mid_icon"></span>
-                        <div class="mid_list fl">
-                            <div class="list mgb20">
-                                <span>3</span>
-                                <p>当前正在启用的答卷数</p>
-                            </div>
-                            <div class="list">
-                                <span>10</span>
-                                <p>填答卷总数</p>
+                <a href="/exam/index" class="">
+                    <div class="item col_purple">
+                        <h1>填答卷管理</h1>
+                        <div class="mid">
+                            <span class="mid_icon"></span>
+                            <div class="mid_list fl">
+                                <div class="list mgb20">
+                                    <span>3</span>
+                                    <p>当前正在启用的答卷数</p>
+                                </div>
+                                <div class="list">
+                                    <span>10</span>
+                                    <p>填答卷总数</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <a href="#/exam" class=""></a>
-                </div>
+                </a>
                 <div class="item col_yellow">
                     <h1>机构管理</h1>
                     <div class="mid">
@@ -107,7 +108,7 @@
                         </div>
                     </div>
                     <a href="#"></a>
-                    <a href="#/orgIndex" class=""></a>
+                    <a href="/org/index" class="">链接</a>
                 </div>
                 <div class="item col_green">
                     <h1>用户管理</h1>
@@ -124,7 +125,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#/user" class=""></a>
+                    <a href="/user/index" class="">链接</a>
                 </div>
                 <div class="item col_blue">
                     <h1>信息管理</h1>
@@ -141,7 +142,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#/info" class=""></a>
+                    <a href="/info/index" class="">链接</a>
                 </div>
                 <div class="item col_pink">
                     <h1>数据统计管理</h1>
@@ -177,7 +178,7 @@
                         </div>
                     </div>
                     <a href="#"></a>
-                    <a href="#/systemIndex" class=""></a>
+                    <a href="/system/index" class="">链接</a>
                 </div>
                 <div class="item col_lightgreen">
                     <h1>服务管理</h1>
@@ -195,7 +196,7 @@
                         </div>
                     </div>
                     <a href="#"></a>
-                    <a href="#/apilist" class=""></a>
+                    <a href="/apilist/index" class=""></a>
                 </div>
                 <div class="item col_lightgreen">
                     <h1>商品管理</h1>
@@ -208,12 +209,12 @@
                             </div>
                             <div class="list">
                                 <span>00</span>
-                                <p>总商品数</p>
+                                <p>总商品数</p>0
                             </div>
                         </div>
                     </div>
                     <a href="#"></a>
-                    <a href="#/products" class=""></a>
+                    <a href="/goods/index" class="">链接</a>
                 </div>
                 <div class="item col_lightgreen">
                     <h1>订单管理</h1>
@@ -231,7 +232,7 @@
                         </div>
                     </div>
                     <a href="#"></a>
-                    <a href="#/orderList" class=""></a>
+                    <a href="/order/index" class="">链接</a>
                 </div>
                 <div class="item col_lightgreen">
                     <h1>图书管理</h1>
@@ -249,7 +250,7 @@
                         </div>
                     </div>
                     <a href="#"></a>
-                    <a href="#/bookPanel" class=""></a>
+                    <a href="/bookPanel/index" class="">链接</a>
                 </div>
                 <div class="item col_lightgreen">
                     <h1>测评管理</h1>
@@ -267,7 +268,7 @@
                         </div>
                     </div>
                     <a href="#"></a>
-                    <a href="#/evaluationPanel" class=""></a>
+                    <a href="/evaluationPanel/index" class="">链接</a>
                 </div>
                 <div class="item col_purple">
                     <h1>试题管理</h1>
@@ -284,7 +285,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#/examPaperPanel" class=""></a>
+                    <a href="/examPaperPanel/index" class="">链接</a>
                 </div>
                 <div class="item col_lightgreen">
                     <h1>第三方应用管理</h1>
@@ -302,7 +303,7 @@
                         </div>
                     </div>
                     <a href="#"></a>
-                    <a href="#/thirdparty" class=""></a>
+                    <a href="/thirdparty/index" class="">链接</a>
                 </div>
             </div>
         </div>
